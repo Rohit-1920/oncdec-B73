@@ -437,3 +437,789 @@ Understanding the Linux file system hierarchy and shortcuts enhances your abilit
 
 
 ----
+# Day 7: Mastering Text Editing with VIM
+
+## Overview of Vim and Its History
+Vim (Vi IMproved) is a powerful and versatile text editor widely used in the Linux ecosystem. Originating from the Vi editor, Vim offers enhanced features such as syntax highlighting, plugins, and an extensive set of commands.
+
+### Why Use Vim?
+- Lightweight and fast.
+- Works in terminal environments, making it ideal for remote servers.
+- Extensible and customizable.
+
+### Practical:
+To check if Vim is installed:
+```
+vim --version
+```
+If not installed, use:
+```
+sudo apt install vim  # Debian/Ubuntu
+sudo yum install vim  # RHEL/CentOS
+```
+
+## Basic Concepts: Modes in Vim
+Vim operates in multiple modes, each designed for specific tasks:
+- **Command Mode**: Default mode for navigation and issuing commands.
+- **Insert Mode**: For editing and inserting text.
+- **Visual Mode**: For selecting and manipulating text.
+- **Execute Mode**: For running commands (accessed with `:`).
+
+### Practical:
+To switch between modes:
+- Open Vim:
+  ```
+  vim example.txt
+  ```
+- Start in Command Mode (default).
+- Press `i` to enter Insert Mode.
+- Press `Esc` to return to Command Mode.
+
+## Basic Navigation in Command Mode
+Learn essential navigation commands in Command Mode:
+- Move the cursor:
+  - `h`: Left
+  - `l`: Right
+  - `j`: Down
+  - `k`: Up
+- Jump to the beginning of a line:
+  ```
+  0
+  ```
+- Jump to the end of a line:
+  ```
+  $
+  ```
+- Search for text:
+  ```
+  /search_term
+  ```
+
+### Practical:
+- Open a file and practice moving the cursor using `h`, `l`, `j`, and `k`.
+- Try jumping to the start (`0`) and end (`$`) of lines.
+
+## Text Manipulation
+Learn to delete, copy, and paste text:
+- Delete a character:
+  ```
+  x
+  ```
+- Delete a line:
+  ```
+  dd
+  ```
+- Copy a line:
+  ```
+  yy
+  ```
+- Paste after the cursor:
+  ```
+  p
+  ```
+
+### Practical:
+- Open a file and delete specific characters or lines.
+- Copy and paste a line within the file.
+
+## Undo and Redo
+Correct mistakes with undo and redo commands:
+- Undo the last change:
+  ```
+  u
+  ```
+- Redo the last undone change:
+  ```
+  Ctrl + r
+  ```
+
+### Practical:
+- Edit a file and experiment with `u` and `Ctrl + r` to understand undo/redo functionality.
+
+## Entering Insert Mode
+Switch to Insert Mode to edit text:
+- Enter Insert Mode at the cursor position:
+  ```
+  i
+  ```
+- Enter Insert Mode at the beginning of the line:
+  ```
+  I
+  ```
+
+### Practical:
+- Open a file and use `i` and `I` to enter Insert Mode and add text.
+
+## Editing Text in Insert Mode
+Once in Insert Mode, type and edit text as needed. Use backspace to delete characters.
+
+### Practical:
+- Add new content to a file in Insert Mode.
+- Use `Esc` to return to Command Mode.
+
+## Navigating and Editing in Insert Mode
+Enhance text editing skills with navigation shortcuts:
+- Jump to the beginning of the line:
+  ```
+  Ctrl + a
+  ```
+- Jump to the end of the line:
+  ```
+  Ctrl + e
+  ```
+
+### Practical:
+- Open a file, enter Insert Mode, and navigate within lines using shortcuts.
+
+## Exiting Insert Mode
+Exit Insert Mode and return to Command Mode:
+- Press:
+  ```
+  Esc
+  ```
+
+### Practical:
+- Practice toggling between Insert Mode and Command Mode while editing text.
+
+## Conclusion
+Mastering Vim requires practice and familiarity with its modes and commands. Experiment with the provided practical exercises to build your confidence in using this powerful text editor.
+
+---
+# Day 8: The Editor's Lair: Mastering Text Editing with VIM
+
+## Entering Execute Mode
+Execute Mode allows you to run commands for file operations, searching, and other advanced functionalities. To enter Execute Mode, press:
+```
+:
+```
+
+### Practical:
+1. Open Vim:
+   ```
+   vim example.txt
+   ```
+2. Enter Execute Mode and save the file:
+   ```
+   :w
+   ```
+3. Quit Vim:
+   ```
+   :q
+   ```
+4. Combine commands to save and quit:
+   ```
+   :wq
+   ```
+
+## Executing Basic Commands: File Operations, Searching, Line Numbering
+### File Operations
+- Save the file:
+  ```
+  :w
+  ```
+- Save as a new file:
+  ```
+  :w newfile.txt
+  ```
+- Quit Vim:
+  ```
+  :q
+  ```
+- Force quit without saving:
+  ```
+  :q!
+  ```
+
+### Searching
+- Search for a term:
+  ```
+  /search_term
+  ```
+- Search backward:
+  ```
+  ?search_term
+  ```
+- Navigate search results:
+  - Next occurrence: `n`
+  - Previous occurrence: `N`
+
+### Line Numbering
+- Show line numbers:
+  ```
+  :set number
+  ```
+- Hide line numbers:
+  ```
+  :set nonumber
+  ```
+
+### Practical:
+1. Search for the term "example" in a file.
+2. Enable line numbering and locate specific lines.
+
+## Entering Visual Mode
+Visual Mode allows for text selection and manipulation. To enter Visual Mode, press:
+- Character-wise selection:
+  ```
+  v
+  ```
+- Line-wise selection:
+  ```
+  V
+  ```
+- Block selection:
+  ```
+  Ctrl + v
+  ```
+
+### Practical:
+1. Open a file in Vim.
+2. Use `v` to select a word or character sequence.
+3. Use `V` to select a full line.
+4. Use `Ctrl + v` to select a rectangular block of text.
+
+## Manipulating Text in Visual Mode
+Once text is selected in Visual Mode, you can manipulate it:
+- Copy text:
+  ```
+  y
+  ```
+- Delete text:
+  ```
+  d
+  ```
+- Paste text:
+  ```
+  p
+  ```
+- Replace selected text:
+  1. Select the text.
+  2. Press `c` to clear and enter Insert Mode.
+  3. Type the replacement text and press `Esc`.
+
+
+# Day 9: Managing Users and Permissions in Linux
+
+## Overview of User and Permission Management
+User and permission management is essential for securing a Linux system and controlling access to resources. This involves creating, modifying, and managing users, groups, and permissions to ensure proper access control.
+
+### Practical:
+1. Identify the current user:
+   ```bash
+   whoami
+   ```
+2. View all users on the system:
+   ```bash
+   cat /etc/passwd
+   ```
+
+## Types of Users
+Linux categorizes users into:
+1. **Root User**: The administrator with full system access.
+2. **System Users**: Used for system processes and services.
+3. **Regular Users**: General users with restricted permissions.
+
+### Practical:
+1. Check the root user:
+   ```bash
+   id root
+   ```
+2. Identify system users:
+   ```bash
+   less /etc/passwd | grep -v "/home"
+   ```
+
+## Using `useradd` Command
+The `useradd` command creates new user accounts.
+
+### Syntax:
+```bash
+useradd [options] username
+```
+
+### Options:
+- `-m`: Create a home directory for the user.
+- `-s`: Specify the default shell.
+- `-G`: Add the user to supplementary groups.
+
+### Practical:
+1. Add a new user:
+   ```bash
+   sudo useradd -m -s /bin/bash john
+   ```
+2. Verify the user:
+   ```bash
+   id john
+   ```
+
+## Setting User Passwords
+Set or change a user password using the `passwd` command.
+
+### Practical:
+1. Set a password for a user:
+   ```bash
+   sudo passwd john
+   ```
+2. Test login with the new credentials.
+
+## Managing User Groups
+Groups simplify permission management by categorizing users.
+
+### Commands:
+- `groupadd`: Create a new group.
+- `usermod -aG`: Add a user to a group.
+- `groups`: Display groups a user belongs to.
+
+### Practical:
+1. Create a new group:
+   ```bash
+   sudo groupadd developers
+   ```
+2. Add a user to the group:
+   ```bash
+   sudo usermod -aG developers john
+   ```
+3. Verify group membership:
+   ```bash
+   groups john
+   ```
+
+## Removing Users
+Delete a user account using the `userdel` command.
+
+### Practical:
+1. Remove a user:
+   ```bash
+   sudo userdel john
+   ```
+2. Remove a user and their home directory:
+   ```bash
+   sudo userdel -r john
+   ```
+
+## Introduction to Affected Files
+Several system files are affected during user and permission management:
+- `/etc/passwd`: Stores user account details.
+- `/etc/shadow`: Stores encrypted passwords.
+- `/etc/group`: Stores group details.
+
+### Practical:
+1. View the contents of `/etc/passwd`:
+   ```bash
+   cat /etc/passwd
+   ```
+2. Check group details:
+   ```bash
+   cat /etc/group
+   ```
+
+## User Home Directories
+Each user has a dedicated home directory for personal files, typically located in `/home/username`.
+
+### Practical:
+1. View a user’s home directory:
+   ```bash
+   ls /home
+   ```
+2. Access another user’s home directory (as root):
+   ```bash
+   sudo ls /home/john
+   ```
+
+
+## Switching Between Users in Linux
+Switching users is necessary for testing or administrative tasks.
+
+### Using `su` Command
+The `su` command switches to another user account.
+
+### Practical:
+1. Switch to another user:
+   ```bash
+   su john
+   ```
+2. Return to the previous user:
+   ```bash
+   exit
+   ```
+
+### Using `sudo` Command
+The `sudo` command allows running commands as another user, typically root.
+
+### Practical:
+1. Run a command as root:
+   ```bash
+   sudo apt update
+   ```
+2. Verify `sudo` privileges:
+   ```bash
+   sudo -l
+   ```
+
+## Conclusion
+Understanding and managing users and permissions is critical for Linux system administration. By practicing these concepts, you can effectively control access and maintain system security.
+
+---
+# Managing Users and Permissions in Linux
+
+## Day 10: Managing Users and Permissions in Linux
+
+In this lesson, we'll dive deep into user and group management in Linux, including practical applications, commands, and configuration file details.
+
+---
+
+## Importance of Password Security
+Passwords are the first line of defense for user accounts. Weak passwords can lead to unauthorized access and compromise system security. Ensure users set complex passwords and follow password policies.
+
+### Key Practices:
+- Use at least 8 characters with a mix of upper/lower case letters, numbers, and special characters.
+- Periodically change passwords to minimize exposure risk.
+- Avoid sharing passwords.
+
+---
+
+## Using `passwd` Command
+The `passwd` command is used to change a user's password and manage password-related settings.
+
+### Syntax:
+```bash
+passwd [OPTIONS] [USER]
+```
+
+### Examples:
+- Change the current user’s password:
+  ```bash
+  passwd
+  ```
+- Change another user's password (requires root privileges):
+  ```bash
+  passwd username
+  ```
+- Lock a user's account:
+  ```bash
+  passwd -l username
+  ```
+- Unlock a user's account:
+  ```bash
+  passwd -u username
+  ```
+- Expire a user's password to force a reset on the next login:
+  ```bash
+  passwd -e username
+  ```
+
+---
+
+---
+
+## Account Locking and Expiration
+Locking accounts can prevent unauthorized logins, while expiration ensures unused accounts are deactivated.
+
+### Lock Account:
+```bash
+passwd -l username
+```
+
+
+### Check Account Details:
+```bash
+chage -l username
+```
+
+---
+
+## Understanding `/etc/shadow` Fields
+The `/etc/shadow` file stores encrypted passwords and account metadata.
+
+### Fields:
+```plaintext
+username:password:last_change:min_days:max_days:warn:inactive:expire
+```
+- **username**: User login name.
+- **password**: Encrypted password (or `!` for locked accounts).
+- **last_change**: Days since epoch when password last changed.
+- **min_days**: Minimum days before a password change is allowed.
+- **max_days**: Maximum days before a password must be changed.
+- **warn**: Days before expiry to warn the user.
+- **inactive**: Days after password expiry before account lock.
+- **expire**: Absolute account expiry date.
+
+---
+
+## Using `chage` Command
+The `chage` command manages password aging and account expiration.
+
+### Syntax:
+```bash
+chage [OPTIONS] [USER]
+```
+
+### Examples:
+- View password aging details:
+  ```bash
+  chage -l username
+  ```
+- Set maximum password age:
+  ```bash
+  chage -M 90 username
+  ```
+- Force password change at next login:
+  ```bash
+  chage -d 0 username
+  ```
+
+---
+
+## Introduction to Linux Groups
+Groups allow multiple users to share permissions and access to resources.
+
+### Types of Groups:
+1. **Primary Group**: Associated with the user by default (specified during user creation).
+2. **Secondary Group**: Additional groups a user is part of.
+
+---
+
+## Fields of `/etc/group` and `/etc/gshadow`
+
+### `/etc/group`:
+Contains group information.
+```plaintext
+group_name:x:GID:members
+```
+- **group_name**: Name of the group.
+- **x**: Placeholder for password (if any).
+- **GID**: Group ID.
+- **members**: Comma-separated list of group members.
+
+### `/etc/gshadow`:
+Contains secure group passwords and metadata.
+```plaintext
+group_name:password:admin_users:members
+```
+- **password**: Encrypted group password (rarely used).
+- **admin_users**: Users allowed to administer the group.
+- **members**: Regular group members.
+
+---
+
+## Managing Groups
+
+### Creating Groups:
+```bash
+groupadd group_name
+```
+
+### Deleting Groups:
+```bash
+groupdel group_name
+```
+
+### Modifying Groups:
+- Change group name:
+  ```bash
+  groupmod -n new_name old_name
+  ```
+- Change GID:
+  ```bash
+  groupmod -g new_gid group_name
+  ```
+
+---
+
+## Managing Group Memberships
+
+### Add a User to a Group:
+```bash
+usermod -aG group_name username
+```
+
+### Remove a User from a Group:
+Edit `/etc/group` manually or use `gpasswd`:
+```bash
+gpasswd -d username group_name
+```
+
+### View Group Memberships:
+```bash
+groups username
+```
+
+---
+
+## Viewing and Editing Group Information
+
+### List All Groups:
+```bash
+cat /etc/group
+```
+
+### View Group Details:
+```bash
+groupmems -g group_name -l
+```
+
+
+---
+
+## Practical Examples
+
+### Scenario 1: Create a New Team
+1. Create a group:
+   ```bash
+   groupadd dev_team
+   ```
+2. Add users to the group:
+   ```bash
+   usermod -aG dev_team alice
+   usermod -aG dev_team bob
+   ```
+3. Verify membership:
+   ```bash
+   groups alice
+   ```
+
+
+---
+
+By following these practices and using the mentioned commands, you can effectively manage users, passwords, and groups in Linux.
+----
+
+# Day 11: Managing Users and Permissions in Linux
+
+## Importance of File Permissions in Linux
+File permissions play a vital role in Linux security and system stability. They determine who can read, write, or execute files and directories, protecting sensitive data and preventing accidental or malicious changes.
+
+Key reasons for file permissions:
+- **System Security**: Prevent unauthorized access.
+- **Data Integrity**: Ensure only authorized users can modify data.
+- **Operational Stability**: Restrict critical system files from unauthorized modifications.
+
+---
+
+## Explanation of rwx (read, write, execute) Permissions
+Linux permissions are represented using three sets of characters:
+1. **Read (`r`)**: Allows viewing the contents of a file or listing directory contents.
+2. **Write (`w`)**: Allows modifying file contents or creating/deleting files within a directory.
+3. **Execute (`x`)**: Allows running a file as a program or accessing a directory.
+
+### Structure of Permissions:
+- Permissions are grouped for three categories:
+  - **User (u)**: The owner of the file.
+  - **Group (g)**: Users in the group assigned to the file.
+  - **Others (o)**: All other users.
+
+Example:
+```
+-rwxr-xr--  1 user group  1024 Dec 18 10:00 example.txt
+```
+- **`rwx`**: Permissions for the owner (read, write, execute).
+- **`r-x`**: Permissions for the group (read, execute).
+- **`r--`**: Permissions for others (read only).
+
+---
+
+## How Permissions are Displayed with `ls -l`
+The `ls -l` command provides a detailed view of files, including permissions:
+
+Example:
+```
+$ ls -l
+-rw-r--r-- 1 user group  2048 Dec 18 12:00 file.txt
+```
+### Breakdown of Output:
+1. **`-rw-r--r--`**: Permission string.
+2. **`1`**: Link count (number of references to the file).
+3. **`user`**: File owner.
+4. **`group`**: Group assigned to the file.
+5. **`2048`**: File size in bytes.
+6. **`Dec 18 12:00`**: Last modification date and time.
+7. **`file.txt`**: File name.
+
+---
+
+## Breaking Down the Permission String (e.g., `-rwxr-xr--`)
+- **First character (`-`)**:
+  - `-` indicates a regular file.
+  - `d` indicates a directory.
+  - `l` indicates a symbolic link.
+
+- **Next nine characters**:
+  - `rwx` (owner permissions).
+  - `r-x` (group permissions).
+  - `r--` (others' permissions).
+
+### Practical Example:
+1. Change file permissions to `rw-` for the owner and no access for others:
+   ```
+   $ chmod 600 file.txt
+   ```
+2. Verify permissions:
+   ```
+   $ ls -l
+   -rw------- 1 user group 1024 Dec 18 14:00 file.txt
+   ```
+
+---
+
+## Introduction to File Types
+Files in Linux are categorized into types based on their purpose and usage.
+
+### File Types Displayed by `ls -l`:
+- **Regular File (`-`)**: Normal files containing data or text.
+- **Directory (`d`)**: Container for other files or directories.
+- **Symbolic Link (`l`)**: Shortcut pointing to another file.
+- **Socket (`s`)**: Enables inter-process communication.
+- **Pipe (`p`)**: Allows data flow between processes.
+- **Block Device (`b`)**: Represents a block hardware device (e.g., hard drives).
+- **Character Device (`c`)**: Represents a character hardware device (e.g., keyboard).
+
+---
+
+## User Defined File Types
+User-defined file types are created by users for specific purposes, such as:
+- **Text Files**: Configuration, log, or documentation files.
+- **Scripts**: Automating tasks (e.g., shell scripts).
+- **Executables**: Compiled programs or binaries.
+
+### Example:
+1. Create a text file:
+   ```
+   $ echo "Hello, Linux" > myfile.txt
+   ```
+2. Make a script executable:
+   ```
+   $ chmod +x script.sh
+   ```
+
+---
+
+## System Defined File Types
+System-defined file types are pre-configured by Linux to manage system functionality:
+- **Configuration Files**: Located in `/etc` (e.g., `/etc/passwd`).
+- **Libraries**: Shared code used by applications (e.g., `/lib`).
+- **Logs**: System and application logs (e.g., `/var/log`).
+
+---
+
+## Practical Scenarios
+1. Change directory permissions to allow group members to write:
+   ```
+   $ chmod g+w /shared-directory
+   ```
+
+2. Restrict file access to the owner:
+   ```
+   $ chmod 700 confidential.txt
+   ```
+
+3. Verify file type using `file` command:
+   ```
+   $ file example.txt
+   example.txt: ASCII text
+   ```
+
+---
+
+Feel free to experiment with these commands to better understand Linux permissions and file types.
+
+----
